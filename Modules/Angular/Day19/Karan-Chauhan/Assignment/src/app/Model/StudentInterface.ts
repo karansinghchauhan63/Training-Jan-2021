@@ -1,0 +1,21 @@
+export interface Student
+{
+    StudentId?:number,
+    StudentName:string,
+    BirthDate:Date,
+    BirthPlace:string,
+    FirstLanguage:string,
+    Address:string,
+    FatherName:string,
+    FatherEmail:string,
+    FatherEducation:string,
+    FatherDesignation:string,
+    FatherPhoneNumber:number,
+    MotherName:string,
+    MotherEmail:string,
+    MotherEducation:string,
+    MotherDesignation:string,
+    MotherPhoneNumber:number,
+    EmergencyContact?:Array<any>,
+    References?:Array<any>
+}

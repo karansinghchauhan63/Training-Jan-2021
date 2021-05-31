@@ -1,0 +1,22 @@
+#imglogo {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+}
+
+#htmlmenu {
+    background: #FCF3CF;
+    height: 100vh;    
+
+
+}
+
+#bodycontent {
+    background: white;     
+    height: 100vh;    
+
+}
+
+ul {
+    list-style-type: none;
+}

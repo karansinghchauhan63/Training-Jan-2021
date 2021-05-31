@@ -1,0 +1,49 @@
+#imglogo {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+}
+
+#cssmenu {
+    background: #FCF3CF;
+
+}
+
+#bodycontent {
+    background: white;     
+    height: 100vh;    
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+#content{
+    border: 2px solid blue;
+    text-align:center;
+    font-size: 32px;
+}
+
+@media only screen and (max-width: 500px) {
+    #content {
+        border: 2px solid red;
+        text-align: left;
+        font-size: 12px;
+    }
+    h3 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #content {
+        background-color: yellow;
+    }
+}
+
+@media only screen and (min-width: 968px) {
+    #content {
+        background-color: cadetblue;
+    }
+}

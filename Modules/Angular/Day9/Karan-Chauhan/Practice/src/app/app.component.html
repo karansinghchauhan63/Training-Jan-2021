@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <p class="display-3">FORM GROUP AND VALIDATION</p>
+        </div>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">
+            Username
+          </label>
+          <input
+            type="text"
+            id="username"
+            formControlName="username"
+            class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="email">
+            Email ID
+          </label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control">
+        </div>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input 
+              type="radio"
+              formControlName="gender"
+              [value]="gender">{{ gender }}
+          </label>
+        </div>
+        <div formArrayName="hobbies">
+          <h4>Your Hobbies</h4>
+          <button class="btn btn-primary mb-3" type="button" (click)="onAddHobby()">Add Hobby</button>
+          <div class="form-group"
+            *ngFor="let hobbyControl of getHobbies.controls; let i = index ">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
+        </div>
+        <span
+          *ngIf="!signupForm.valid && signupForm.touched"
+          class="help-block">
+          Please enter valid data!
+        </span>
+        <button class="btn btn-warning" type="submit">Submit</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

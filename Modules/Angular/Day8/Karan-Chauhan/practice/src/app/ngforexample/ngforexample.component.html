@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title display-3">
+            NgFor Example
+        </div>
+        <hr>
+        <br>
+        <div *ngFor="let product of productList; let idx=index, let first = first, let last=last">
+            <li class="table border border-outline-dark p-2">
+                {{product.ProductName}}
+                {{product.ProductPrice}}
+                {{product.ProductQuantity}}
+            </li>
+        </div>
+    </div>
+</div>

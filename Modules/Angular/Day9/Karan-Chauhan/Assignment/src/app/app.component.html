@@ -1,0 +1,504 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <p class="display-3">STUDENT APPLICATION FORM</p>
+        </div>
+        <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+          <div>
+            <label>
+              <b>STUDENT DETAILS</b>
+            </label>
+            <hr>
+            <div class="form-group" formGroupName="studentname">
+              <label class="control-label">
+                FIRST NAME
+              </label>
+              <input type="text" id="firstname" formControlName="firstname" class="form-control">
+              <span
+                *ngIf="(studentForm.get('studentname.firstname').touched || studentForm.get('studentname.firstname').dirty) && !studentForm.get('studentname.firstname').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('studentname.firstname').errors.required">The field is required</span>
+                <span *ngIf="studentForm.get('studentname.firstname').errors.minlength || studentForm.get('studentname.firstname').errors.maxlength">The character should be between 2 and 15</span>
+                <span *ngIf="studentForm.get('studentname.firstname').errors.NoCharacter">This field should contain
+                  character only</span>
+              </span>
+            </div>
+            <div class="form-group" formGroupName="studentname">
+              <label>
+                MIDDLE NAME
+              </label>
+              <input type="text" id="middlename" formControlName="middlename" class="form-control">
+              <span
+                *ngIf="(studentForm.get('studentname.middlename').touched || studentForm.get('studentname.middlename').dirty) && !studentForm.get('studentname.middlename').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('studentname.middlename').errors.required">The field is required</span>
+                <span *ngIf="studentForm.get('studentname.middlename').errors.minlength || studentForm.get('studentname.middlename').errors.maxlength">The character should be between 2 and 15</span>
+                <span *ngIf="studentForm.get('studentname.middlename').errors.NoCharacter">This field should contain
+                  character only</span>
+              </span>
+            </div>
+            <div class="form-group" formGroupName="studentname">
+              <label>
+                LAST NAME
+              </label>
+              <input type="text" id="lastname" formControlName="lastname" class="form-control">
+              <span
+                *ngIf="(studentForm.get('studentname.lastname').touched || studentForm.get('studentname.lastname').dirty) && !studentForm.get('studentname.lastname').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('studentname.lastname').errors.minlength || studentForm.get('studentname.lastname').errors.maxlength">The character should be between 2 and 15</span>
+                <span *ngIf="studentForm.get('studentname.lastname').errors.required">The field is required</span>
+                <span *ngIf="studentForm.get('studentname.lastname').errors.NoCharacter">This field should contain
+                  character only</span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dob">
+              DATE OF BIRTH
+            </label>
+            <input type="date" id="dob" formControlName="dob" class="form-control">
+            <span
+              *ngIf="(studentForm.get('dob').touched || studentForm.get('dob').dirty) && !studentForm.get('dob').valid"
+              class="help-block text-danger">
+              <span *ngIf="studentForm.get('dob').errors.required">The field is required</span>
+              <span *ngIf="studentForm.get('dob').errors.AgeError">The age should be between 5 to 18 years</span>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="control-label">
+              PLACE OF BIRTH
+            </label>
+            <input type="text" id="place" formControlName="birthplace" class="form-control">
+            <span
+              *ngIf="(studentForm.get('birthplace').touched || studentForm.get('birthplace').dirty) && !studentForm.get('birthplace').valid"
+              class="help-block text-danger">
+              <span *ngIf="studentForm.get('birthplace').errors.required">The field is required</span>
+            </span>
+          </div>
+          <div class="form-group">
+            <label>
+              FIRST LANGUAGE
+            </label>
+            <input type="text" id="fl" formControlName="firstlanguage" class="form-control">
+            <span
+              *ngIf="(studentForm.get('firstlanguage').touched || studentForm.get('firstlanguage').dirty) && !studentForm.get('firstlanguage').valid"
+              class="help-block text-danger">
+              <span *ngIf="studentForm.get('firstlanguage').errors.required">The field is required</span>
+            </span>
+          </div>
+          <label for="address">
+            <b>ADDRESS</b>
+          </label>
+          <hr>
+          <div class="row">
+            <div class="col-lg-6 form-group" formGroupName="address">
+              <label>CITY</label>
+              <input type="text" formControlName="city" class="form-control">
+              <span
+                *ngIf="(studentForm.get('address.city').touched || studentForm.get('address.city').dirty) && !studentForm.get('address.city').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('address.city').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div class="col-lg-6 form-group" formGroupName="address">
+              <label>STATE</label>
+              <input type="text" formControlName="state" class="form-control">
+              <span
+                *ngIf="(studentForm.get('address.state').touched || studentForm.get('address.state').dirty) && !studentForm.get('address.state').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('address.state').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div class="col-lg-6 form-group" formGroupName="address">
+              <label>COUNTRY</label>
+              <input type="text" formControlName="country" class="form-control">
+              <span
+                *ngIf="(studentForm.get('address.country').touched || studentForm.get('address.country').dirty) && !studentForm.get('address.country').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('address.country').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div class="col-lg-6 form-group" formGroupName="address">
+              <label>PINCODE</label>
+              <input type="tel" formControlName="pincode" class="form-control">
+              <span
+                *ngIf="(studentForm.get('address.pincode').touched || studentForm.get('address.pincode').dirty) && !studentForm.get('address.pincode').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('address.pincode').errors.minlength || studentForm.get('address.pincode').errors.maxlength">Pin code is of 6 digit</span>
+                <span *ngIf="studentForm.get('address.pincode').errors.required">The field is required</span><br>
+                <span *ngIf="studentForm.get('address.pincode').errors.NoDigit">This field should contain digits only</span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>
+              <b>FATHER DETAILS</b>
+            </label>
+            <hr>
+            <div class="form-group" formGroupName="fathername">
+              <label>
+                FIRST NAME
+              </label>
+              <input type="text" formControlName="firstname" class="form-control">
+              <span
+                *ngIf="(studentForm.get('fathername.firstname').touched || studentForm.get('fathername.firstname').dirty) && !studentForm.get('fathername.firstname').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('fathername.firstname').errors.minlength || studentForm.get('fathername.firstname').errors.maxlength">The name should contain between 2 to 15 character</span>
+                <span *ngIf="studentForm.get('fathername.firstname').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div class="form-group" formGroupName="fathername">
+              <label>
+                MIDDLE NAME
+              </label>
+              <input type="text" formControlName="middlename" class="form-control">
+              <span
+                *ngIf="(studentForm.get('fathername.middlename').touched || studentForm.get('fathername.middlename').dirty) && !studentForm.get('fathername.middlename').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('fathername.middlename').errors.minlength || studentForm.get('fathername.middlename').errors.maxlength">The name should contain between 2 to 15 character</span>
+                <span *ngIf="studentForm.get('fathername.middlename').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div class="form-group" formGroupName="fathername">
+              <label>
+                LAST NAME
+              </label>
+              <input type="text" formControlName="lastname" class="form-control">
+              <span
+                *ngIf="(studentForm.get('fathername.lastname').touched || studentForm.get('fathername.lastname').dirty) && !studentForm.get('fathername.lastname').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('fathername.lastname').errors.minlength || studentForm.get('fathername.lastname').errors.maxlength">The name should contain between 2 to 15 character</span>
+                <span *ngIf="studentForm.get('fathername.lastname').errors.required">The field is required</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group" formGroupName="fatherdetails">
+            <label>
+              EMAIL
+            </label>
+            <div>
+              <input type="email" formControlName="email" class="form-control">
+              <span
+                *ngIf="(studentForm.get('fatherdetails.email').touched || studentForm.get('fatherdetails.email').dirty) && !studentForm.get('fatherdetails.email').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('fatherdetails.email').errors.email">Email is invalid</span>
+                <span *ngIf="studentForm.get('fatherdetails.email').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                EDUCATION
+              </label>
+              <input type="text" formControlName="education" class="form-control">
+              <span
+                *ngIf="(studentForm.get('fatherdetails.education').touched || studentForm.get('fatherdetails.education').dirty) && !studentForm.get('fatherdetails.education').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('fatherdetails.education').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                PROFESSION
+              </label>
+              <input type="text" formControlName="profession" class="form-control">
+              <span
+                *ngIf="(studentForm.get('fatherdetails.profession').touched || studentForm.get('fatherdetails.profession').dirty) && !studentForm.get('fatherdetails.profession').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('fatherdetails.profession').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                DESIGNATION
+              </label>
+              <input type="text" formControlName="designation" class="form-control">
+              <span
+                *ngIf="(studentForm.get('fatherdetails.designation').touched || studentForm.get('fatherdetails.designation').dirty) && !studentForm.get('fatherdetails.designation').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('fatherdetails.designation').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                PHONE NUMBER
+              </label>
+              <input type="tel" formControlName="phoneno" class="form-control">
+              <span
+                *ngIf="(studentForm.get('fatherdetails.phoneno').touched || studentForm.get('fatherdetails.phoneno').dirty) && !studentForm.get('fatherdetails.phoneno').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('fatherdetails.phoneno').errors.minlength || studentForm.get('fatherdetails.phoneno').errors.maxlength">Please enter valid phone number</span>
+                <span *ngIf="studentForm.get('fatherdetails.phoneno').errors.required">The field is required</span><br>
+                <span *ngIf="studentForm.get('fatherdetails.phoneno').errors.NoDigit">This field should contain digits only</span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group" formGroupName="mothername">
+            <label>
+              <b>MOTHER DETAILS</b>
+            </label>
+            <hr>
+            <div><label>
+                FIRST NAME
+              </label>
+              <input type="text" formControlName="firstname" class="form-control">
+              <span
+                *ngIf="(studentForm.get('mothername.firstname').touched || studentForm.get('mothername.firstname').dirty) && !studentForm.get('mothername.firstname').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('mothername.firstname').errors.minlength || studentForm.get('mothername.firstname').errors.maxlength">The name should contain between 2 to 15 character</span>
+                <span *ngIf="studentForm.get('mothername.firstname').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                MIDDLE NAME
+              </label>
+              <input type="text" formControlName="middlename" class="form-control">
+              <span
+                *ngIf="(studentForm.get('mothername.middlename').touched || studentForm.get('mothername.middlename').dirty) && !studentForm.get('mothername.middlename').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('mothername.middlename').errors.minlength || studentForm.get('mothername.middlename').errors.maxlength">The name should contain between 2 to 15 character</span>
+                <span *ngIf="studentForm.get('mothername.middlename').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                LAST NAME
+              </label>
+              <input type="text" formControlName="lastname" class="form-control">
+              <span
+                *ngIf="(studentForm.get('mothername.lastname').touched || studentForm.get('mothername.lastname').dirty) && !studentForm.get('mothername.lastname').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('mothername.lastname').errors.minlength || studentForm.get('mothername.lastname').errors.maxlength">The name should contain between 2 to 15 character</span>
+                <span *ngIf="studentForm.get('mothername.lastname').errors.required">The field is required</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group" formGroupName="motherdetails">
+            <div>
+              <label>
+                EMAIL
+              </label>
+              <input type="email" formControlName="email" class="form-control">
+              <span
+                *ngIf="(studentForm.get('motherdetails.email').touched || studentForm.get('motherdetails.email').dirty) && !studentForm.get('motherdetails.email').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('motherdetails.email').errors.required">This field is required</span>
+                <span *ngIf="studentForm.get('motherdetails.email').errors.email">Email is invalid</span>
+
+              </span>
+            </div>
+            <div>
+              <label>
+                EDUCATION
+              </label>
+              <input type="text" formControlName="education" class="form-control">
+              <span
+                *ngIf="(studentForm.get('motherdetails.education').touched || studentForm.get('motherdetails.education').dirty) && !studentForm.get('motherdetails.education').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('motherdetails.education').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                PROFESSION
+              </label>
+              <input type="text" formControlName="profession" class="form-control">
+              <span
+                *ngIf="(studentForm.get('motherdetails.profession').touched || studentForm.get('motherdetails.profession').dirty) && !studentForm.get('motherdetails.profession').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('motherdetails.profession').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                DESIGNATION
+              </label>
+              <input type="text" formControlName="designation" class="form-control">
+              <span
+                *ngIf="(studentForm.get('motherdetails.designation').touched || studentForm.get('motherdetails.designation').dirty) && !studentForm.get('motherdetails.designation').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('motherdetails.designation').errors.required">The field is required</span>
+              </span>
+            </div>
+            <div>
+              <label>
+                PHONE NUMBER
+              </label>
+              <input type="tel" formControlName="phoneno" class="form-control">
+              <span
+                *ngIf="(studentForm.get('motherdetails.phoneno').touched || studentForm.get('motherdetails.phoneno').dirty) && !studentForm.get('motherdetails.phoneno').valid"
+                class="help-block text-danger">
+                <span *ngIf="studentForm.get('motherdetails.phoneno').errors.minlength || studentForm.get('motherdetails.phoneno').errors.maxlength">Please enter valid phone number</span>
+                <span *ngIf="studentForm.get('motherdetails.phoneno').errors.required">The field is required</span><br>
+                <span *ngIf="studentForm.get('motherdetails.phoneno').errors.NoDigit">This field should contain digits only</span>
+              </span>
+            </div>
+          </div>
+
+
+          <div>
+            <h4>EMERGENCY CONTACTS:</h4>
+            <button class="btn btn-primary mb-3" type="button" (click)="onAddEmergency()"
+              [disabled]="studentForm.get('emergencycontact').invalid">Add Contact</button>
+            <div formArrayName="emergencycontact"
+              *ngFor="let temp of studentForm.get('emergencycontact')['controls']; let i = index">
+              <div [formGroupName]="i">
+
+                <div>
+                  <label class="mt-1">RELATION</label>
+                  <input type="text" formControlName="relation" class="form-control mt-2">
+                  <span
+                    *ngIf="(temp.get('relation').touched || temp.get('relation').dirty) && !temp.get('relation').valid"
+                    class="help-block text-danger">
+                    <span *ngIf="temp.get('relation').errors.required">The field is required</span>
+                  </span>
+                </div>
+                <div>
+                  <label class="mt-1">CONTACT NO</label>
+                  <input type="text" formControlName="contactno" class="form-control mt-2">
+                  <span
+                    *ngIf="(temp.get('contactno').touched || temp.get('contactno').dirty) && !temp.get('contactno').valid"
+                    class="help-block text-danger">
+                    <span *ngIf="temp.get('contactno').errors.minlength || temp.get('contactno').errors.maxlength">Please enter valid phone number</span>
+                    <span *ngIf="temp.get('contactno').errors.required">The field is required</span><br>
+                    <span *ngIf="temp.get('contactno').errors.NoDigit">This field should contain digits only</span>
+
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4>REFERENCES:</h4>
+            <button class="btn btn-primary mb-3" type="button" (click)="onAddReference()"
+              [disabled]="studentForm.get('reference').invalid">Add Reference</button>
+            <div formArrayName="reference" *ngFor="let temp of studentForm.get('reference')['controls']; let i = index">
+              <div [formGroupName]="i">
+                <div>
+                  <label class="mt-1">REFERENCE NAME</label>
+                  <input type="text" formControlName="referencename" class="form-control mt-2">
+                  <span
+                    *ngIf="(temp.get('referencename').touched || temp.get('referencename').dirty) && !temp.get('referencename').valid"
+                    class="help-block text-danger">
+                    <span *ngIf="temp.get('referencename').errors.required">The field is required</span>
+                  </span>
+                </div>
+                <div>
+                  <label class="mt-1">ADDRESS</label>
+                  <input type="text" formControlName="address" class="form-control mt-2">
+                  <span
+                    *ngIf="(temp.get('address').touched || temp.get('address').dirty) && !temp.get('address').valid"
+                    class="help-block text-danger">
+                    <span *ngIf="temp.get('address').errors.required">The field is required</span>
+                  </span>
+                </div>
+                <div>
+                  <label class="mt-1">CONTACT NO</label>
+                  <input type="text" formControlName="contactno" class="form-control mt-2">
+                  <span
+                    *ngIf="(temp.get('contactno').touched || temp.get('contactno').dirty) && !temp.get('contactno').valid"
+                    class="help-block text-danger">
+                    <span *ngIf="temp.get('contactno').errors.minlength || temp.get('contactno').errors.maxlength">Please enter valid phone number</span>
+                    <span *ngIf="temp.get('contactno').errors.required">The field is required</span><br>
+                    <span *ngIf="temp.get('contactno').errors.NoDigit">This field should contain digits only</span>
+
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-warning mt-2" type="submit">Submit</button>
+          <!-- <button class="btn btn-danger mt-2 ml-2" type="button" (click)="display()">Display</button> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISPLAY TABLE -->
+
+<div class="container mt-5" style="overflow-x: scroll;">
+  <table class="table">
+      <thead class="thead-dark">
+          <tr>
+              <th>StudentFirstName</th>
+              <th>StudentMiddleName</th>
+              <th>StudentLastName</th>
+              <th>DOB</th>
+              <th>BirthPlace</th>
+              <th>FirstLanguage</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Country</th>
+              <th>PincodeNumber</th>
+              <th>FatherFirstName</th>
+              <th>FatherMiddleName</th>
+              <th>FatherLastName</th>
+              <th>FatherEmail</th>
+              <th>FatherEducation</th>
+              <th>FatherProfession</th>
+              <th>FatherDesignation</th>
+              <th>FatherPhoneNo</th>
+              <th>MotherFirstName</th>
+              <th>MotherMiddleName</th>
+              <th>MotherLastName</th>
+              <th>MotherEmail</th>
+              <th>MotherEducation</th>
+              <th>MotherProfession</th>
+              <th>MotherDesignation</th>
+              <th>MotherPhoneNo</th>
+              <th>Relation</th>
+              <th>RelationMoblieNumber</th>
+              <th>ReferenceName</th>
+              <th>ReferenceAddress</th>
+              <th>ReferenceContactNumber</th>
+          </tr>
+
+      </thead>
+      <tbody>
+          <tr *ngFor="let StudentData of studentData">
+              <td>{{StudentData.studentname.firstname}}</td>
+              <td>{{StudentData.studentname.middlename}}</td> 
+              <td>{{StudentData.studentname.lastname}}</td>
+              <td>{{StudentData.dob}}</td>
+              <td>{{StudentData.birthplace}}</td>
+              <td>{{StudentData.firstlanguage}}</td>
+              <td>{{StudentData.address.city}}</td>
+              <td>{{StudentData.address.state}} </td>
+              <td>{{StudentData.address.country}}</td>
+              <td>{{StudentData.address.pincode}}</td>
+              <td>{{StudentData.fathername.firstname}} </td>
+              <td>{{StudentData.fathername.middlename}}</td>
+              <td>{{StudentData.fathername.lastname}}</td>
+              <td>{{StudentData.fatherdetails.email}}</td>
+              <td>{{StudentData.fatherdetails.education}}</td>
+              <td>{{StudentData.fatherdetails.profession}}</td>
+              <td>{{StudentData.fatherdetails.designation}}</td>
+              <td>{{StudentData.fatherdetails.phoneno}}</td>
+              <td>{{StudentData.mothername.firstname}} </td>
+              <td>{{StudentData.mothername.middlename}}</td>
+              <td>{{StudentData.mothername.lastname}}</td>
+              <td>{{StudentData.motherdetails.email}}</td>
+              <td>{{StudentData.motherdetails.education}}</td>
+              <td>{{StudentData.motherdetails.profession}}</td>
+              <td>{{StudentData.motherdetails.designation}}</td>
+              <td>{{StudentData.motherdetails.phoneno}}</td>
+              <td>{{StudentData.emergencycontact.relation}}</td>
+              <td>{{StudentData.emergencycontact.contactno}}</td>
+              <td>{{StudentData.reference.referencename}}</td>
+              <td>{{StudentData.reference.address}}</td>
+              <td>{{StudentData.reference.contactno}}</td>
+
+
+          </tr>
+      </tbody>
+  </table>
+
+  <!--EDIT MODAL-->
+ </div>

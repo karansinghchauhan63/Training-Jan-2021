@@ -1,0 +1,321 @@
+<app-student (emitter)="InsertStudent($event)"></app-student>
+
+<div class="container mt-5" style="overflow-x: scroll;">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>StudentFirstName</th>
+                <th>StudentMiddleName</th>
+                <th>StudentLastName</th>
+                <th>DOB</th>
+                <th>BirthPlace</th>
+                <th>FirstLanguage</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>PincodeNumber</th>
+                <th>FatherFirstName</th>
+                <th>FatherMiddleName</th>
+                <th>FatherLastName</th>
+                <th>FatherEmail</th>
+                <th>FatherEducation</th>
+                <th>FatherProfession</th>
+                <th>FatherDesignation</th>
+                <th>FatherPhoneNo</th>
+                <th>MotherFirstName</th>
+                <th>MotherMiddleName</th>
+                <th>MotherLastName</th>
+                <th>MotherEmail</th>
+                <th>MotherEducation</th>
+                <th>MotherProfession</th>
+                <th>MotherDesignation</th>
+                <th>MotherPhoneNo</th>
+                <th>Relation</th>
+                <th>RelationMoblieNumber</th>
+                <th>ReferenceName</th>
+                <th>ReferenceAddress</th>
+                <th>ReferenceContactNumber</th>
+                <th>UpdateRecord</th>
+                <th>DeleteRecord</th>
+
+
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let StudentData of stdRecord">
+                <td>{{StudentData.StudentFirstName}}</td>
+                <td>{{StudentData.StudentMiddleName}}</td> 
+                <td>{{StudentData.StudentLastName}}</td>
+                <td>{{StudentData.DateOfBirth}}</td>
+                <td>{{StudentData.BirthPlace}}</td>
+                <td>{{StudentData.FirstLanguage}}</td>
+                <td>{{StudentData.City}}</td>
+                <td>{{StudentData.State}} </td>
+                <td>{{StudentData.Country}}</td>
+                <td>{{StudentData.Pincode}}</td>
+                <td>{{StudentData.FatherFirstName}} </td>
+                <td>{{StudentData.FatherMiddleName}}</td>
+                <td>{{StudentData.FatherLastName}}</td>
+                <td>{{StudentData.FatherEmail}}</td>
+                <td>{{StudentData.FatherEducation}}</td>
+                <td>{{StudentData.FatherProfession}}</td>
+                <td>{{StudentData.FatherDesignation}}</td>
+                <td>{{StudentData.FatherPhoneNo}}</td>
+                <td>{{StudentData.MotherFirstName}}</td>
+                <td>{{StudentData.MotherMiddleName}}</td>
+                <td>{{StudentData.MotherLastName}}</td>
+                <td>{{StudentData.MotherEmail}}</td>
+                <td>{{StudentData.MotherEducation}}</td>
+                <td>{{StudentData.MotherProfession}}</td>
+                <td>{{StudentData.MotherDesignation}}</td>
+                <td>{{StudentData.MotherPhoneNo}}</td>
+                <td>{{StudentData.EmergencyContactRelation}}</td>
+                <td>{{StudentData.EmergencyContactNumber}}</td>
+                <td>{{StudentData.ReferenceName}}</td>
+                <td>{{StudentData.ReferenceAddress}}</td>
+                <td>{{StudentData.ReferenceContactNumber}}</td>
+
+                <td> <button class="btn btn-warning"
+                    data-toggle="modal" data-target="#editmodal"
+                    (click)="UpdateData(StudentData)">Update</button></td>
+
+                <td> <button class="btn btn-danger"
+                        (click)="DeleteData(StudentData.StudentFirstName,stdRecord)">Delete</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <!--EDIT MODAL-->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">STUDENT APPLICATION FORM</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form name="myform">
+                <div>
+                    <label>
+                        <b>STUDENT DETAILS</b>
+                    </label>
+                    <hr>
+                    <div class="form-group">
+                        <label class="control-label">
+                            FIRST NAME
+                        </label>
+                        <input type="text" id="firstname" [(ngModel)]="stdyRecord.StudentFirstName"
+                            class="form-control" name="sname">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            MIDDLE NAME
+                        </label>
+                        <input type="text" id="middlename" [(ngModel)]="stdyRecord.StudentMiddleName"
+                            class="form-control" name="smname">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            LAST NAME
+                        </label>
+                        <input type="text" id="lastname" [(ngModel)]="stdyRecord.StudentLastName"
+                            class="form-control"  name="sln">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dob">
+                        DATE OF BIRTH
+                    </label>
+                    <input type="date" id="dob"  name="dob" [(ngModel)]="stdyRecord.DateOfBirth" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">
+                        PLACE OF BIRTH
+                    </label>
+                    <input type="text" id="place"  name="bp" [(ngModel)]="stdyRecord.BirthPlace" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>
+                        FIRST LANGUAGE
+                    </label>
+                    <input type="text" id="fl"  name="fl" [(ngModel)]="stdyRecord.FirstLanguage" class="form-control">
+                </div>
+                <label for="address">
+                    <b>ADDRESS</b>
+                </label>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-6 form-group">
+                        <label>CITY</label>
+                        <input type="text"  name="city" [(ngModel)]="stdyRecord.City" class="form-control">
+                    </div>
+                    <div class="col-lg-6 form-group">
+                        <label>STATE</label>
+                        <input type="text"  name="state" [(ngModel)]="stdyRecord.State" class="form-control">
+                    </div>
+                    <div class="col-lg-6 form-group">
+                        <label>COUNTRY</label>
+                        <input type="text"  name="country" [(ngModel)]="stdyRecord.Country" class="form-control">
+                    </div>
+                    <div class="col-lg-6 form-group">
+                        <label>PINCODE</label>
+                        <input type="number"  name="pin" [(ngModel)]="stdyRecord.Pincode" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <b>FATHER DETAILS</b>
+                    </label>
+                    <hr>
+                    <div class="form-group">
+                        <label>
+                            FIRST NAME
+                        </label>
+                        <input type="text"  name="fname" [(ngModel)]="stdyRecord.FatherFirstName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            MIDDLE NAME
+                        </label>
+                        <input type="text"  name="fmn" [(ngModel)]="stdyRecord.FatherMiddleName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            LAST NAME
+                        </label>
+                        <input type="text"  name="fln" [(ngModel)]="stdyRecord.FatherLastName" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        EMAIL
+                    </label>
+                    <div>
+                        <input type="email"  name="fe" [(ngModel)]="stdyRecord.FatherEmail" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            EDUCATION
+                        </label>
+                        <input type="text"  name="fedu" [(ngModel)]="stdyRecord.FatherEducation" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            PROFESSION
+                        </label>
+                        <input type="text"  name="fp" [(ngModel)]="stdyRecord.FatherProfession" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            DESIGNATION
+                        </label>
+                        <input type="text"  name="fdes" [(ngModel)]="stdyRecord.FatherDesignation" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            PHONE NUMBER
+                        </label>
+                        <input type="number"  name="fpno" [(ngModel)]="stdyRecord.FatherPhoneNo" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <b>MOTHER DETAILS</b>
+                    </label>
+                    <hr>
+                    <div><label>
+                            FIRST NAME
+                        </label>
+                        <input type="text"  name="mfn" [(ngModel)]="stdyRecord.MotherFirstName" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            MIDDLE NAME
+                        </label>
+                        <input type="text"  name="mmn" [(ngModel)]="stdyRecord.MotherMiddleName" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            LAST NAME
+                        </label>
+                        <input type="text"  name="mln" [(ngModel)]="stdyRecord.MotherLastName" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label>
+                            EMAIL
+                        </label>
+                        <input type="email"  name="memail" [(ngModel)]="stdyRecord.MotherEmail" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            EDUCATION
+                        </label>
+                        <input type="text"  name="medu" [(ngModel)]="stdyRecord.MotherEducation" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            PROFESSION
+                        </label>
+                        <input type="text"  name="mprof" [(ngModel)]="stdyRecord.MotherProfession" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            DESIGNATION
+                        </label>
+                        <input type="text"  name="mdesg" [(ngModel)]="stdyRecord.MotherDesignation" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            PHONE NUMBER
+                        </label>
+                        <input type="number"  name="mphone" [(ngModel)]="stdyRecord.MotherPhoneNo" class="form-control">
+                    </div>
+                </div>
+
+
+                <div>
+                    <h4>EMERGENCY CONTACTS:</h4>
+
+                    <div>
+                        <label class="mt-1">RELATION</label>
+                        <input type="text"  name="emergrel" [(ngModel)]="stdyRecord.EmergencyContactRelation"
+                            class="form-control mt-2">
+
+                    </div>
+                    <label class="mt-1">CONTACT NO</label>
+                    <input type="text"  name="emercno" [(ngModel)]="stdyRecord.EmergencyContactNumber" class="form-control mt-2">
+
+                </div>
+
+
+                <div>
+                    <h4>REFERENCES:</h4>
+                    <div>
+                        <label class="mt-1">REFERENCE NAME</label>
+                        <input type="text"   name="refname" [(ngModel)]="stdyRecord.ReferenceName" class="form-control mt-2">
+                        <label class="mt-1">ADDRESS</label>
+                        <input type="text"   name="refaddress" [(ngModel)]="stdyRecord.ReferenceAddress" class="form-control mt-2">
+                        <label class="mt-1">CONTACT NO</label>
+                        <input type="text"   name="refcontno" [(ngModel)]="stdyRecord.ReferenceContactNumber" class="form-control mt-2">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary mt-2 mr-2" data-dismiss="modal">Close</button>
+                <button class="btn btn-success mt-2" type="button" (click)="UpdatedData(stdyRecord)">Submit</button>
+            </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

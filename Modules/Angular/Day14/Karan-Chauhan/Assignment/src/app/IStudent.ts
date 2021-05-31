@@ -1,0 +1,34 @@
+export class Student
+{
+    StudentFirstName:string;
+    StudentMiddleName:string;
+    StudentLastName:string;
+    DateOfBirth:string;
+    BirthPlace:string;
+    FirstLanguage:string;
+    City:string;
+    State:string;
+    Country:string;
+    Pincode:number;
+    FatherFirstName:string;
+    FatherMiddleName:string;
+    FatherLastName:string;
+    FatherEmail:string;
+    FatherEducation:string;
+    FatherProfession:string;
+    FatherDesignation:string;
+    FatherPhoneNo:number;
+    MotherFirstName:string;
+    MotherMiddleName:string;
+    MotherLastName:string;
+    MotherEmail:string;
+    MotherEducation:string;
+    MotherProfession:string;
+    MotherDesignation:string;
+    MotherPhoneNo:number;
+    EmergencyContactRelation:string;
+    EmergencyContactNumber:number;
+    ReferenceName:string;
+    ReferenceAddress:string;
+    ReferenceContactNumber:number;
+}

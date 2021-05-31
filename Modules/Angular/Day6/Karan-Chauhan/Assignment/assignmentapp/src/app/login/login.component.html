@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <p class="display-5">LOGIN FORM</p>
+            <hr>
+            <label>Enter username: </label>
+            <input type="text" class="form-control" [(ngModel)]="username">
+            <label>Enter password: </label>
+            <input type="password" class="form-control" [(ngModel)]="password">
+            <button class="btn btn-outline-danger mt-3" (click)="validate()">LOGIN</button>
+            <hr>
+            <p>STATUS : {{ output }}</p>
+        </div>
+    </div>
+</div>

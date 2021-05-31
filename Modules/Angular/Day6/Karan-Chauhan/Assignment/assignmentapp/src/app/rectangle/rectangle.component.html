@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <p class="display-5">AREA OF RECTANGLE</p>
+            <hr>
+            <label>Enter the length of rectangle: </label>
+            <input type="number" class="form-control" [(ngModel)]="length">
+            <label>Enter the breadth of rectangle: </label>
+            <input type="number" class="form-control" [(ngModel)]="breadth">
+            <button class="btn btn-outline-warning mt-3" (click)="area()">CALCULATE AREA</button>
+            <hr>
+            <p>LENGTH : {{ length }} </p>
+            <p>BREADTH : {{ breadth }}</p>
+            <p>RESULT : {{ result }}</p>
+        </div>
+    </div>
+</div>

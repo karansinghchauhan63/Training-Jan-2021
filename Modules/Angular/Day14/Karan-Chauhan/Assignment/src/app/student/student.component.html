@@ -1,0 +1,223 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <p class="display-3">STUDENT APPLICATION FORM</p>
+                </div>
+                <form (ngSubmit)="onSubmit()" name="myform">
+                    <div>
+                        <label>
+                            <b>STUDENT DETAILS</b>
+                        </label>
+                        <hr>
+                        <div class="form-group">
+                            <label class="control-label">
+                                FIRST NAME
+                            </label>
+                            <input type="text" id="firstname" [(ngModel)]="stdRecord.StudentFirstName"
+                                class="form-control" name="sname">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                MIDDLE NAME
+                            </label>
+                            <input type="text" id="middlename" [(ngModel)]="stdRecord.StudentMiddleName"
+                                class="form-control" name="smname">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                LAST NAME
+                            </label>
+                            <input type="text" id="lastname" [(ngModel)]="stdRecord.StudentLastName"
+                                class="form-control"  name="sln">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">
+                            DATE OF BIRTH
+                        </label>
+                        <input type="date" id="dob"  name="dob" [(ngModel)]="stdRecord.DateOfBirth" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            PLACE OF BIRTH
+                        </label>
+                        <input type="text" id="place"  name="bp" [(ngModel)]="stdRecord.BirthPlace" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            FIRST LANGUAGE
+                        </label>
+                        <input type="text" id="fl"  name="fl" [(ngModel)]="stdRecord.FirstLanguage" class="form-control">
+                    </div>
+                    <label for="address">
+                        <b>ADDRESS</b>
+                    </label>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-6 form-group">
+                            <label>CITY</label>
+                            <input type="text"  name="city" [(ngModel)]="stdRecord.City" class="form-control">
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label>STATE</label>
+                            <input type="text"  name="state" [(ngModel)]="stdRecord.State" class="form-control">
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label>COUNTRY</label>
+                            <input type="text"  name="country" [(ngModel)]="stdRecord.Country" class="form-control">
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label>PINCODE</label>
+                            <input type="number"  name="pin" [(ngModel)]="stdRecord.Pincode" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <b>FATHER DETAILS</b>
+                        </label>
+                        <hr>
+                        <div class="form-group">
+                            <label>
+                                FIRST NAME
+                            </label>
+                            <input type="text"  name="fname" [(ngModel)]="stdRecord.FatherFirstName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                MIDDLE NAME
+                            </label>
+                            <input type="text"  name="fmn" [(ngModel)]="stdRecord.FatherMiddleName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                LAST NAME
+                            </label>
+                            <input type="text"  name="fln" [(ngModel)]="stdRecord.FatherLastName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            EMAIL
+                        </label>
+                        <div>
+                            <input type="email"  name="fe" [(ngModel)]="stdRecord.FatherEmail" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                EDUCATION
+                            </label>
+                            <input type="text"  name="fedu" [(ngModel)]="stdRecord.FatherEducation" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                PROFESSION
+                            </label>
+                            <input type="text"  name="fp" [(ngModel)]="stdRecord.FatherProfession" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                DESIGNATION
+                            </label>
+                            <input type="text"  name="fdes" [(ngModel)]="stdRecord.FatherDesignation" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                PHONE NUMBER
+                            </label>
+                            <input type="number"  name="fpno" [(ngModel)]="stdRecord.FatherPhoneNo" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <b>MOTHER DETAILS</b>
+                        </label>
+                        <hr>
+                        <div><label>
+                                FIRST NAME
+                            </label>
+                            <input type="text"  name="mfn" [(ngModel)]="stdRecord.MotherFirstName" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                MIDDLE NAME
+                            </label>
+                            <input type="text"  name="mmn" [(ngModel)]="stdRecord.MotherMiddleName" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                LAST NAME
+                            </label>
+                            <input type="text"  name="mln" [(ngModel)]="stdRecord.MotherLastName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label>
+                                EMAIL
+                            </label>
+                            <input type="email"  name="memail" [(ngModel)]="stdRecord.MotherEmail" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                EDUCATION
+                            </label>
+                            <input type="text"  name="medu" [(ngModel)]="stdRecord.MotherEducation" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                PROFESSION
+                            </label>
+                            <input type="text"  name="mprof" [(ngModel)]="stdRecord.MotherProfession" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                DESIGNATION
+                            </label>
+                            <input type="text"  name="mdesg" [(ngModel)]="stdRecord.MotherDesignation" class="form-control">
+                        </div>
+                        <div>
+                            <label>
+                                PHONE NUMBER
+                            </label>
+                            <input type="number"  name="mphone" [(ngModel)]="stdRecord.MotherPhoneNo" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <h4>EMERGENCY CONTACTS:</h4>
+
+                        <div>
+                            <label class="mt-1">RELATION</label>
+                            <input type="text"  name="emergrel" [(ngModel)]="stdRecord.EmergencyContactRelation"
+                                class="form-control mt-2">
+
+                        </div>
+                        <label class="mt-1">CONTACT NO</label>
+                        <input type="text"  name="emercno" [(ngModel)]="stdRecord.EmergencyContactNumber" class="form-control mt-2">
+
+                    </div>
+
+
+                    <div>
+                        <h4>REFERENCES:</h4>
+                        <div>
+                            <label class="mt-1">REFERENCE NAME</label>
+                            <input type="text"   name="refname" [(ngModel)]="stdRecord.ReferenceName" class="form-control mt-2">
+                            <label class="mt-1">ADDRESS</label>
+                            <input type="text"   name="refaddress" [(ngModel)]="stdRecord.ReferenceAddress" class="form-control mt-2">
+                            <label class="mt-1">CONTACT NO</label>
+                            <input type="text"   name="refcontno" [(ngModel)]="stdRecord.ReferenceContactNumber" class="form-control mt-2">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success mt-2" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

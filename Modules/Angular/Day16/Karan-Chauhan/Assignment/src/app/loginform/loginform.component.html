@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    function checkPass() {
+        var username = document.getElementById("user").value;
+        var pass = document.getElementById("pass").value;
+
+        if (username == "karan" && pass == "12345") {
+            alert("Login Successful!");
+        }
+        else{
+            alert("Login Unsuccessful!");
+        }
+    }
+</script>
+<h1>LOGIN FORM</h1>
+
+    <form id="login">
+        <label>User Name</label>
+        <input type="text" id="user" placeholder="Enter the username" required /><br /><br />
+        <label>Password &nbsp;</label>
+        <input type="password" id="pass" placeholder="Enter the password" required /><br /><br />
+        <input type="submit" value="Submit" onclick="checkPass()"/>
+    </form>

@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="bg-light p-3">
+        <form id="form1">
+            <h3>CHECK WHETHER A STRING IS BLANK OR NOT:</h3>
+            <label for="string">Enter the String:</label>
+            <input type="text" class="form-control" id="strcheck">
+            <input type="submit" value="CHECK" class="btn btn-warning m-3" onclick="return checkstr()">
+        </form>
+    </div>
+</div>
+<br><br><hr><br><br>
+<div class="container">
+    <div class="bg-info p-3">
+        <form id="form2">
+            <h3>SPLIT A STRING AND CONVERT IT INTO AN ARRAY OF WORDS:</h3>
+            <label for="string">Enter the String:</label>
+            <input type="text" class="form-control" id="constr" required>
+            <input type="submit" value="CONVERT" class="btn btn-success m-3" onclick="return strconv()">
+        </form>
+    </div>
+</div>
+<br><br><hr><br><br>
+<div class="container">
+    <div class="bg-dark text-white p-3">
+        <form id="form3">
+            <h3>EXTRACT A SPECIFIED NUMBER OF CHARACTERS FROM A STRING:</h3>
+            <label for="string">Enter the String:</label>
+            <input type="text" class="form-control" id="exstr" required>
+            <label for="string">Enter the starting index:</label>
+            <input type="text" class="form-control" id="start" pattern="[0-9]+" required>
+            <label for="string">Enter the number to extract:</label>
+            <input type="text" class="form-control" id="num" pattern="[0-9]+" required>
+            <input type="submit" value="EXTRACT" class="btn btn-light m-3" onclick="return extract()">
+        </form>
+    </div>
+</div>
+<br><br><hr><br><br>
+<div class="container">
+    <div class="bg-warning p-3">
+        <form id="form4">
+            <h3>CLICK TO GET CURRENT DATE:</h3>                
+            <input type="submit" value="CURRENT DATE" class="btn btn-dark m-3" onclick="return checkDate()">
+        </form>
+    </div>
+</div>
+<br><br><hr><br><br>
+<div class="container">
+    <div class="bg-danger p-3">
+        <form id="form5">
+            <h3>PUSH:</h3>  
+            <label for="string">Enter the data to push:</label>
+            <input type="text" class="form-control" id="pushdata" required>              
+            <input type="submit" value="PUSH" class="btn btn-light m-3" onclick="return fnPush()">
+        </form>
+    </div>
+</div>
+<br><br><hr><br><br>
+<div class="container">
+    <div class="bg-success p-3">
+        <form id="form6">
+            <h3>POP:</h3>                
+            <input type="submit" value="POP" class="btn btn-light m-3" onclick="return fnPop()">
+        </form>
+    </div>
+</div>
+<br><br><hr><br><br>
+<div class="container">
+    <div class="bg-primary p-3">
+        <form id="form7">
+            <h3>DELETING ELEMENT:</h3> 
+            <label for="string">Enter the index of item to be deleted from Array:</label>
+            <input type="text" class="form-control" id="del" required>                 
+            <input type="submit" value="DELETE" class="btn btn-light m-3" onclick="return fnDelete()">
+        </form>
+    </div>
+</div>
+<br><br><hr><br><br>
+<div class="container">
+    <div class="bg-secondary p-3">
+        <form id="form8">
+            <h3>SHIFTING ELEMENT:</h3>                
+            <input type="submit" value="SHIFT" class="btn btn-light m-3" onclick="return fnShift()">
+        </form>
+    </div>
+</div>

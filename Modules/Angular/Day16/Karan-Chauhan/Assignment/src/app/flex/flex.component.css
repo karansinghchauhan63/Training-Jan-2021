@@ -1,0 +1,34 @@
+#imglogo {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+}
+
+#cssmenu {
+    background: #FCF3CF;
+
+}
+
+#bodycontent {
+    background: white;     
+    height: 100vh;    
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+.flexbox{
+    display: flex;
+    background-color: gold;
+}
+
+.flexbox > div {
+    width: 200px;
+    height:200px;
+    margin: 20px;
+    background-color: aquamarine;
+    padding: 10px;
+    text-align: center;
+}

@@ -1,0 +1,36 @@
+<body>
+
+<div class="container">
+    <h1 class="display-4">Arithmetic Operations</h1>
+    <form class="form-group" id="myForm">
+        <div class="form-group">
+            <label for="first">Please enter first number : </label>
+            <input type="text" class="form-control" id="no1" pattern="[0-9]+" required>
+        </div>
+        <div class="form-group">
+            <label for="second">Please enter second number : </label>
+            <input type="text" class="form-control" id="no2" pattern="[0-9]+" required>
+        </div>
+        <div class="form-group">
+            <label for="operation">Please select operation you want to perform : </label><br>
+
+            <input type="radio" value="addition" id="add" name="operation" checked>
+            <label for="add">Addition</label><br>
+
+            <input type="radio" value="subtraction" id="sub" name="operation">
+            <label for="sub">Subtraction</label><br>
+
+            <input type="radio" value="multiplication" id="mul" name="operation">
+            <label for="mul">Multiplication</label><br>
+
+            <input type="radio" value="division" id="divide" name="operation">
+            <label for="divide">Division</label><br>
+        </div>
+        <div class="form-group">
+            <input type="button" onclick="myOperation()" value="Calculate" id="calculate" class="btn btn-primary">
+            <input type="reset" value="Reset" id="reset" class="btn btn-secondary">
+        </div>
+        <label id="result"></label>
+    </form>
+</div>
+</body>

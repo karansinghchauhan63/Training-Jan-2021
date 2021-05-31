@@ -1,0 +1,32 @@
+<div class="container m-3">
+<button (click)="show()" class="btn btn-outline-primary m-3">Display</button>
+<table class="table">
+    <thead>
+    <th>NAME</th>
+    <th>DATE OF BIRTH</th>
+    <th>BIRTH PLACE</th>
+    <th>EDUCATIONAL QUALIFICATION</th>
+    <th>ADDRESS</th>
+    <th>FATHER NAME</th>
+    <th>FATHER CONTACT NO</th>
+    <th>MOTHER NAME</th>
+    <th>MOTHER CONTACT NO</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let st of StudentDataList">
+            <td>{{st.Name}}</td>
+            <td>{{st.BirthDate}}</td>
+            <td>{{st.BirthPlace}}</td>
+            <td>{{st.EducationalQualification}}</td>
+            <td>{{st.Address}}</td>
+            <td>{{st.FatherName}}</td>
+            <td>{{st.FatherContactNo}}</td>
+            <td>{{st.MotherName}}</td>
+            <td>{{st.MotherContactNo}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+

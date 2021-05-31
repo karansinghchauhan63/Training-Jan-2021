@@ -1,0 +1,47 @@
+#imglogo {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+}
+
+#cssmenu {
+    background: #FCF3CF;
+
+}
+
+#bodycontent {
+    background: white;     
+    height: 100vh;    
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 6px;
+    background-color: gray;           
+}
+
+.flexbox > div {
+        width: 100px;
+        height: 40px;
+        margin: 10px;
+        background-color: aquamarine;
+        padding: 8px;
+        text-align: center;
+    }
+
+@media (max-width: 900px) {
+    .flexbox {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 6px;
+        background-color: gray;
+    }
+} 

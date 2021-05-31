@@ -1,0 +1,44 @@
+#imglogo {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+}
+
+#cssmenu {
+    background: #FCF3CF;
+
+}
+
+#bodycontent {
+    background: white;
+    height: 150vh;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* To align the table data of student report card */
+th,
+td {
+    text-align: center;
+}
+
+/* Dummy paragraph border */
+p {
+    border-style: dotted;
+}
+
+/* h1 and h2 in blue */
+#col-lg-9 > h1,
+h2 {
+    color: blue;
+}
+
+
+
+/* Horizontal list of cities using display properties */
+#bodycontent li {
+    display: inline;
+}

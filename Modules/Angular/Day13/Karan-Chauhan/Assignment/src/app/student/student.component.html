@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title m-3 display-3">STUDENT APPLICATION FORM</div>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="studentForm" (ngSubmit)="sendData()">
+                <div class="form-group">
+                    <label>NAME</label>
+                    <input type="text" class="form-control" formControlName="Name">
+                </div>
+                <div class="form-group">
+                    <label>DATE OF BIRTH</label>
+                    <input type="date" class="form-control" formControlName="BirthDate">
+                </div>
+                <div class="form-group">
+                    <label>PLACE OF BIRTH</label>
+                    <input type="text" class="form-control" formControlName="BirthPlace">
+                </div>
+                <div class="form-group">
+                    <label>EDUCATIONAL QUALIFICATION</label>
+                    <input type="text" class="form-control" formControlName="EducationalQualification">
+                </div>
+                <div class="form-group">
+                    <label>ADDRESS</label>
+                    <input type="text" class="form-control" formControlName="Address">
+                </div>
+                <div class="form-group">
+                    <label>FATHER NAME</label>
+                    <input type="text" class="form-control" formControlName="FatherName">
+                </div>
+                <div class="form-group">
+                    <label>CONTACT NO</label>
+                    <input type="text" class="form-control" formControlName="FatherContactNo">
+                </div>
+                <div class="form-group">
+                    <label>MOTHER NAME</label>
+                    <input type="text" class="form-control" formControlName="MotherName">
+                </div>
+                <div class="form-group">
+                    <label>CONTACT NO</label>
+                    <input type="text" class="form-control" formControlName="MotherContactNo">
+                </div>
+                <button class="btn btn-warning mt-2" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

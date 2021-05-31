@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <p class="display-5">AREA OF CIRCLE</p>
+            <hr>
+            <label>Enter the radius of circle: </label>
+            <input type="number" class="form-control" [(ngModel)]="radius">
+            <button class="btn btn-outline-success mt-3" (click)="area()">CALCULATE AREA</button>
+            <hr>
+            <p>RADIUS : {{ radius }}</p>
+            <p>RESULT : {{ result }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <p class="display-5">SIGNUP FORM</p>
+            <hr>
+            <label>Enter Name: </label>
+            <input type="text" class="form-control" [(ngModel)]="name">
+            <label>Enter Address: </label>
+            <input type="text" class="form-control" [(ngModel)]="address">
+            <label>Enter PAN Number: </label>
+            <input type="text" class="form-control" [(ngModel)]="panno">
+            <button class="btn btn-outline-secondary mt-3" (click)="signup()">SIGN UP</button>
+            <hr>
+            <p>Name : {{ name }}</p>
+            <p>Address : {{ address }}</p>
+            <p>PAN No. : {{ panno }}</p>
+            <p>STATUS : {{ status }}</p>
+        </div>
+    </div>
+</div>

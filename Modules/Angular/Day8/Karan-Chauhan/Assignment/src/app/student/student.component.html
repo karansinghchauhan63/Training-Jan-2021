@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-title display-1 p-3">
+        STUDENT DATA
+    </div>
+    <div class="m-3">
+        <table class="table border border-outline">
+            <thead>
+                <th class="p-3">ID</th>
+                <th class="p-3">Name</th>
+                <th class="p-3">Age</th>
+                <th class="p-3">Average</th>
+                <th class="p-3">Grade</th>
+                <th class="p-3">Status</th>
+            </thead>
+            <tbody *ngFor="let item of studentList; let idx=index, let first=first, let last=last;" [ngStyle]="{'color':getColor(item.Grade)}">
+                <ng-container *ngIf="item.Status == 'Active'">
+                    <td class="p-3">{{item.ID}}</td>
+                    <td class="p-3">{{item.Name}}</td>
+                    <td class="p-3">{{item.Age}}</td>
+                    <td class="p-3">{{item.Average}}</td>
+                    <td class="p-3">{{item.Grade}}</td>
+                    <td class="p-3">{{item.Status}}</td>
+                </ng-container>              
+            </tbody>
+        </table>
+    </div>
+</div>
