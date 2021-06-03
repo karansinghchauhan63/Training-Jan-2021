@@ -16,6 +16,7 @@ namespace Assignment.Models.Repository
         public void DeleteDoctor(int id)
         {
             var data = hospitalContext.Doctors.Single(z => z.DoctorId == id);
+            hospitalContext.Doctors.Remove(data);
             hospitalContext.SaveChanges();
         }
 

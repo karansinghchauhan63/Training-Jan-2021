@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable, ObservedValuesFromArray } from 'rxjs';
+import { Observable} from 'rxjs';
 import {Student} from '../app/Model/StudentInterface'
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
-  url:string="https://localhost:44349/api/StudentAdmission";
+  url:string="https://localhost:44343/api/StudentAdmission";
   constructor(private http:HttpClient) { }
 
   httpoption={
@@ -24,9 +24,9 @@ export class StudentService {
     return this.http.post<Student>(this.url,student,this.httpoption);
   }
 
-  UpdateStudent(student:any):Observable<any>
+  UpdateStudent(id:number,student:Student):Observable<Student>
   {
-    return this,this.http.put(this.url+`/${student.StudentId}`,student, this.httpoption);
+    return this.http.put<Student>(this.url+`/${id}`,student);
   }
 
   DeleteStudent(id:number):Observable<Student>
