@@ -1,0 +1,168 @@
+<div class="container bg-white p-3">
+    <div class="row">
+        <div class="col-lg-4">
+            <div *ngFor="let item of productList">
+                <div class="card product-display" style="width: auto;">
+                    <div class="card-body" style="width: auto;">
+                        <img src="{{item.imagePath}}" width="200px" height="400px">
+                        <p class="text-muted">{{item.productName}}</p>
+                        <p><b>Rs. {{item.price}}</b></p>
+                        <p><b>{{item.description}}</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <form [formGroup]="orderForm">
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select class="form-control" name="lfq" formControlName="quantity">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="deliveryaddress">Delivery address</label>
+                    <input type="text" class="form-control"  name="lfaddress" formControlName="address"
+                        placeholder="Enter delivery address">
+                    <span
+                        *ngIf="(orderForm.get('address').touched || orderForm.get('address').dirty) && !orderForm.get('address').valid"
+                        class="help-block text-danger">
+                        <span *ngIf="orderForm.get('address').errors.required">This field is required</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control"  name="lfcity" formControlName="city" placeholder="Enter city">
+                    <span
+                        *ngIf="(orderForm.get('city').touched || orderForm.get('city').dirty) && !orderForm.get('city').valid"
+                        class="help-block text-danger">
+                        <span *ngIf="orderForm.get('city').errors.required">This field is required</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control"  name="lfstate" formControlName="state" placeholder="Enter state">
+                    <span
+                        *ngIf="(orderForm.get('state').touched || orderForm.get('state').dirty) && !orderForm.get('state').valid"
+                        class="help-block text-danger">
+                        <span *ngIf="orderForm.get('state').errors.required">This field is required</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control"  name="lfcountry" formControlName="country" placeholder="Enter country">
+                    <span
+                        *ngIf="(orderForm.get('country').touched || orderForm.get('country').dirty) && !orderForm.get('country').valid"
+                        class="help-block text-danger">
+                        <span *ngIf="orderForm.get('country').errors.required">This field is required</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="pincode">Pincode</label>
+                    <input type="text" class="form-control"  name="lfpin" formControlName="pincode" placeholder="Enter pincode">
+                    <span
+                        *ngIf="(orderForm.get('pincode').touched || orderForm.get('pincode').dirty) && !orderForm.get('pincode').valid"
+                        class="help-block text-danger">
+                        <span *ngIf="orderForm.get('pincode').errors.required">This field is required</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="contactnumber">Contact Number</label>
+                    <input type="text" class="form-control"  name="lfcno" formControlName="contactnumber"
+                        placeholder="Enter contact number">
+                    <span
+                        *ngIf="(orderForm.get('contactnumber').touched || orderForm.get('contactnumber').dirty) && !orderForm.get('contactnumber').valid"
+                        class="help-block text-danger">
+                        <span *ngIf="orderForm.get('contactnumber').errors.required">This field is required</span>
+                    </span>
+                </div>
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modalbill" (click)="orderProduct()"  [disabled]="orderForm.invalid">Buy Now</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Invoice Modal -->
+<div id="printThis">
+    <div class="modal fade" id="modalbill">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">INVOICE</h4>
+                    <img src="../../assets/img/logo.JPG" class="img img-fluid" width="100" height="350">
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body invomodalbody">
+                    <form id="billform">
+                        
+                        <p class="text-muted mb-0" id="inv_cname">Customer Name:</p>
+                        <p class="mb-0" id="label_cname">{{activeUser.name}}</p>
+
+    
+                        <p class="text-muted mb-0 mt-3" id="inv_phoneno">Contact Number</p>
+                        <p class="mb-0" id="label_phoneno">{{ orderForm.value.contactnumber }}</p>
+
+                        <p class="text-muted mb-0 mt-3" id="inv_email">Email:</p>
+                        <p class="mb-0" id="label_email">{{activeUser.email}}</p>
+
+
+                        <p class="text-muted mb-0 mt-3" id="inv_address">Delivery Address:</p>
+                        <p class="mb-0" id="label_address">{{orderForm.value.address}}</p>
+
+                        <p class="text-muted mb-0 mt-3" id="inv_city">City:</p>
+                        <p class="mb-0" id="label_city">{{orderForm.value.city}}</p>
+
+                        <p class="text-muted mb-0 mt-3" id="inv_state">State:</p>
+                        <p class="mb-0" id="label_state">{{orderForm.value.state}}</p>
+
+                        <p class="text-muted mb-0 mt-3" id="inv_address">Country:</p>
+                        <p class="mb-0" id="label_address">{{orderForm.value.country}}</p>
+
+                        <p class="text-muted mb-0 mt-3" id="inv_pincode">Pin Code:</p>
+                        <p class="mb-0" id="label_pincode">{{orderForm.value.pincode}}</p>
+
+                        <br>
+                        <p class="mb-0" id="label_cname"><i>Product Details:</i></p>
+                        <hr>
+                        <p class="text-muted mb-0 mt-3" id="inv_product">Product Name:</p>
+                        <p class="mb-0" id="label_product">{{productList[0].productName}}</p>
+
+
+                        <p class="text-muted mb-0 mt-3" id="inv_price">Price:</p>
+                        <p class="mb-0" id="label_proprice">Rs. {{productList[0].price}}</p>
+
+                        <p class="text-muted mb-0 mt-3" id="inv_price">Purchase Date:</p>
+                        <p class="mb-0" id="label_purchasedate">{{purchaseDate}}</p>
+
+                        
+                        <p class="text-muted mb-0 mt-3" id="inv_price">Quantity:</p>
+                        <p class="mb-0" id="label_purchasedate">{{orderForm.value.quantity}}</p>
+                        <br><hr>
+                       
+                        <p class="text-muted mb-0 mt-3" id="inv_price">Total Amount:</p>
+                        <p class="mb-3" id="label_purchasedate">Rs. {{amount}}</p>
+
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="submit" id="btnPrint" onclick="generateInvoice()" class="btn btn-primary ml-3"
+                            data-dismiss="modal">Generate
+                            Invoice</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

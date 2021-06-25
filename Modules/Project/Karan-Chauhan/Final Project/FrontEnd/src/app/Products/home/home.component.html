@@ -1,0 +1,13 @@
+<div class="row ml-3 mb-3 mt-3">
+    <div *ngFor="let item of productList">
+        <div class="card product-display" style="width: auto;">
+            <div class="card-body" style="width: 300px;">
+                <img src="{{item.imagePath}}" width="200px" height="400px">
+                <p class="text-muted">{{item.productName}}</p>
+                <p><b>Rs. {{item.price}}</b></p>
+                <a [routerLink]="['../buying']"><button class="btn btn-primary" (click)="buyProduct(item)">Buy Now</button></a>
+                <button class="btn btn-outline-primary ml-2" (click)="addToCart(item)">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
